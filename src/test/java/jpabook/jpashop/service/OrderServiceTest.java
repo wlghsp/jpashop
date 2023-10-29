@@ -86,8 +86,8 @@ class OrderServiceTest {
         // Then
         Order getOrder = orderRepository.findOne(orderId);
 
-        assertEquals(OrderStatus.CANCEL, getOrder.getStatus());
-        assertEquals(10, item.getStockQuantity());
+        assertEquals(OrderStatus.CANCEL, getOrder.getStatus(), "주문 취소 시 상태는 CANCEL 이다.");
+        assertEquals(10, item.getStockQuantity(), "주문이 취소된 상품은 그만큼 재고가 증가해야 한다.");
     }
 
     private Member createMember() {
