@@ -12,6 +12,9 @@ spring:
       hibernate:
         # show_sql: true # 아래 org.hibernate.SQL로 볼 수 있음,System.out에 출력 운영환경에서는 비추
         format_sql: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
 
 logging.level:
   org.hibernate.SQL: debug # jpa나 hibernate가 생성하는 모든 SQL을 볼 수 있음, logger를 통해서 보여줌
