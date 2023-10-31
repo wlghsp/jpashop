@@ -14,4 +14,12 @@ public class BookForm {
     private String author;
     private String isbn;
 
+    public BookForm() {
+    }
+
+    public BookForm(String name, int price, int stockQuantity) {
+        this.name = name;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
 }

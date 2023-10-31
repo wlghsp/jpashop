@@ -14,11 +14,11 @@ public class Book extends Item {
     private String author;
     private String isbn;
 
-    public Book(String name, int price, int stockQuantity) {
+    private Book(String name, int price, int stockQuantity) {
         super(name, price, stockQuantity);
     }
 
-    public Book(Long id, String name, int price, int stockQuantity) {
+    private Book(Long id, String name, int price, int stockQuantity) {
         super(id, name, price, stockQuantity);
     }
 
