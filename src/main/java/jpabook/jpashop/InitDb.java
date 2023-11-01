@@ -61,10 +61,7 @@ public class InitDb {
         }
 
         private Member createMember(String name, String city, String street, String zipCode) {
-            Member member = new Member();
-            member.setName(name);
-            member.setAddress(new Address(city, street, zipCode));
-            return member;
+            return Member.createMember(name, new Address(city, street, zipCode));
         }
         
         private Book createBook(String name, int price, int stockQuantity) {

@@ -32,9 +32,7 @@ public class MemberController {
         }
 
         Address address = new Address(form.getCity(), form.getStreet(), form.getZipCode());
-        Member member = new Member();
-        member.setName(form.getName());
-        member.setAddress(address);
+        Member member = Member.createMember(form.getName(), address);
 
         memberService.join(member);
 

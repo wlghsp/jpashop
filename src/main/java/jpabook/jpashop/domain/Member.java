@@ -23,4 +23,21 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
+
+    public Member(String name, Address address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    public Member(String name) {
+        this.name = name;
+    }
+
+    protected Member() {
+
+    }
+
+    public static Member createMember(String name, Address address) {
+        return new Member(name, address);
+    }
 }
