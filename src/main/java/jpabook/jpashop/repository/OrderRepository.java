@@ -27,6 +27,12 @@ public class OrderRepository {
         return em.find(Order.class, id);
     }
 
+
+    public List<Order> findAll() {
+        return em.createQuery("select o from Order o", Order.class)
+                .getResultList();
+    }
+
     /**
      * JPQL 로 처리
      * 실무에서 안 씀
