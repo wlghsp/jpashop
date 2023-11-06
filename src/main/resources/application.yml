@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-정      ddl-auto: create
+      ddl-auto: create
     properties:
       hibernate:
         # show_sql: true # 아래 org.hibernate.SQL로 볼 수 있음,System.out에 출력 운영환경에서는 비추
