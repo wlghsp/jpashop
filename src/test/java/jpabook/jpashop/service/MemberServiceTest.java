@@ -2,7 +2,6 @@ package jpabook.jpashop.service;
 
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
-import jpabook.jpashop.service.MemberService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,24 +27,21 @@ class MemberServiceTest {
     @Rollback(value = false)
     void 회원가입() {
         // Given
-        Member member = new Member();
-        member.setName("kim");
+        Member member = new Member("kim");
 
         // When
         Long saveId = memberService.join(member);
 
         // Then
-        assertEquals(member, memberRepository.findOne(saveId));
+        assertEquals(member, memberRepository.findById(saveId).get());
     }
 
     @Test
     void 중복_회원_예외() {
         // Given
-        Member member1 = new Member();
-        member1.setName("kim");
+        Member member1 = new Member("kim");
 
-        Member member2 = new Member();
-        member2.setName("kim");
+        Member member2 = new Member("kim");
 
         // When
         memberService.join(member1);
