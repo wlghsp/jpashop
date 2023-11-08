@@ -91,8 +91,7 @@ class OrderServiceTest {
     }
 
     private Member createMember() {
-        Member member = new Member();
-        member.setName("회원1");
+        Member member = new Member("회원1");
         member.setAddress(new Address("대전", "갈마", "123-123"));
         em.persist(member);
         return member;
